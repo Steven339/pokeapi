@@ -1,7 +1,16 @@
 from django.db import models
 
+from pokemonApi.auditors import ModelAuditor
 from pokemons.models.pockemon import Pokemon
-from pokemons.models.stat_base import StatBase
+
+
+class StatBase(ModelAuditor):
+    base_stat = models.IntegerField()
+    effort = models.IntegerField()
+    name = models.IntegerField()
+
+    class Meta:
+        abstract = True
 
 
 class PokemonStat(StatBase):
