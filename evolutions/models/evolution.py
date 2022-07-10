@@ -6,6 +6,7 @@ from pokemonApi.auditors import ModelAuditor
 class EvolutionChain(ModelAuditor):
     is_baby = models.BooleanField(default=False)
     external_id = models.IntegerField()
+    specie = models.ForeignKey('species.Specie', on_delete=models.CASCADE)
 
 
 class EvolutionBase(ModelAuditor):
@@ -19,4 +20,4 @@ class EvolutionBase(ModelAuditor):
 class Evolution(EvolutionBase):
     evolution_chain = models.ForeignKey(EvolutionChain, on_delete=models.CASCADE)
     external_id = models.IntegerField()
-    specie = models.ForeignKey('species.Specie', on_delete=models.CASCADE, related_name='evolution_specie')
+    specie = models.ForeignKey('species.Specie', on_delete=models.CASCADE)

@@ -15,4 +15,3 @@ class PokemonSerializer(serializers.Serializer):
     external_id = serializers.CharField()
     specie = serializers.CharField()
     stats = PokemonStatsSerializer(many=True)
-    # evolutions = EvolutionSeralizer(many=True)
