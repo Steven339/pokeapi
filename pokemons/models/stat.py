@@ -7,7 +7,7 @@ from pokemons.models.pockemon import Pokemon
 class StatBase(ModelAuditor):
     base_stat = models.IntegerField()
     effort = models.IntegerField()
-    name = models.IntegerField()
+    name = models.CharField(max_length=25)
 
     class Meta:
         abstract = True
