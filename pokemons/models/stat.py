@@ -14,4 +14,4 @@ class StatBase(ModelAuditor):
 
 
 class PokemonStat(StatBase):
-    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE)
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name='stats')
