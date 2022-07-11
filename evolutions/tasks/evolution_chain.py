@@ -47,4 +47,4 @@ def create_evolutions_from_chain(chain_obj_id, evolves_to):
                 name=evolution_specie_obj.name,
                 evolution_type=Evolution.EVOLUTION_TYPE_CHOICES[0]
             ))
-        Evolution.objects.bulk_create(evolution_list)
+        Evolution.objects.bulk_create(evolution_list, ignore_conflicts=True)

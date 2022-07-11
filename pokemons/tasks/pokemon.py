@@ -29,7 +29,7 @@ def create_pokemon(pokemon, evolution_specie_obj_id):
     evolution_specie_obj = Specie.objects.filter(pk=evolution_specie_obj_id).first()
     pokemon_obj = None
     if evolution_specie_obj:
-        pokemon_obj = Pokemon.objects.create(
+        pokemon_obj, _ = Pokemon.objects.get_or_create(
             name=pokemon['name'],
             weight=pokemon['weight'],
             height=pokemon['height'],
