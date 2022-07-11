@@ -10,15 +10,9 @@ from pokemons.models import Pokemon
 from pokemons.serializers.pokemon import PokemonSerializer
 
 
-class YourSerializer(serializers.Serializer):
-    """Your data serializer, define your fields here."""
-    comments = serializers.IntegerField()
-    likes = serializers.IntegerField()
-
-
 class PokemonView(views.APIView):
     def get(self, request, pokemon_id):
-        pokemon = Pokemon.objects.filter(external_id=pokemon_id).select_related(
+        pokemon = Pokemon.objects.filter(pk=pokemon_id).select_related(
             'specie'
         ).prefetch_related(
             'stats', 'specie__evolution_set', 'specie__evolution_set__evolution_chain'
