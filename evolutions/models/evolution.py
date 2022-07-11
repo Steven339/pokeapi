@@ -21,6 +21,7 @@ class EvolutionBase(ModelAuditor):
 
 
 class Evolution(EvolutionBase):
+    EVOLUTION_TYPE_CHOICES = ("pre-evolution", "evolution")
     evolution_chain = models.ForeignKey(EvolutionChain, on_delete=models.CASCADE)
     external_id = models.IntegerField()
     specie = models.ForeignKey('species.Specie', on_delete=models.CASCADE)

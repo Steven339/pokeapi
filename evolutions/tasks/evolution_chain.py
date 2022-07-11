@@ -35,7 +35,8 @@ def create_evolutions_from_chain(chain_obj_id, evolves_to):
                         evolution_chain=chain_obj,
                         specie=evolution_specie_obj_depth,
                         external_id=evolution_specie_obj_depth.id,
-                        name=evolution_specie_obj_depth.name
+                        name=evolution_specie_obj_depth.name,
+                        evolution_type=Evolution.EVOLUTION_TYPE_CHOICES[1]
                     ))
                     evolves_to = evolution_depth['evolves_to']
 
@@ -43,6 +44,7 @@ def create_evolutions_from_chain(chain_obj_id, evolves_to):
                 evolution_chain=chain_obj,
                 specie=evolution_specie_obj,
                 external_id=evolution_specie_obj.id,
-                name=evolution_specie_obj.name
+                name=evolution_specie_obj.name,
+                evolution_type=Evolution.EVOLUTION_TYPE_CHOICES[0]
             ))
         Evolution.objects.bulk_create(evolution_list)
