@@ -16,6 +16,7 @@
 <br> This command execute a celery tasks and other celery chain tasks to enqueue db transactions to perform process
 
 ### ENDPOINTS
+* Docs url - `http://localhost:8000/swagger/`
 * Get pokemon from id (Id stored in django DB)
 `http://localhost:8000/pokemon/{id}/`
 
