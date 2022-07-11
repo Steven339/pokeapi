@@ -23,7 +23,7 @@
 `http://localhost:8000/pokemon/{id}/`
 
 ```
-HTTP GET - JSON RESPONSE
+HTTP GET - http://localhost:8000/pokemon/108/ - JSON RESPONSE
 
 {
   "name": "pikachu",
