@@ -9,7 +9,3 @@ class Specie(ModelAuditor):
 
     def __str__(self):
         return f'{self.name} - {self.external_id}'
-
-    @property
-    def evolution_chain(self):
-        return self.evolutionchain_set.first()

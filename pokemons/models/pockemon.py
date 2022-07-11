@@ -15,3 +15,4 @@ class PokemonBase(ModelAuditor):
 class Pokemon(PokemonBase):
     external_id = models.IntegerField()
     specie = models.ForeignKey('species.Specie', on_delete=models.CASCADE)
+    stats = models.ManyToManyField('pokemons.PokemonStat')
