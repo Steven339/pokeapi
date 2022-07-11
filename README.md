@@ -11,9 +11,11 @@
 `celery -A pokemonApi worker --loglevel=INFO`
 
 ### COMMANDS
-* get_evolution_chain<br>(Get id from original pokeapi <br>`https://pokeapi.co/api/v2/evolution-chain/{id}/)`
+* get_evolution_chain
 <br>`python manage.py get_evolution_chain --id CHAIN_ID`
-<br> This command execute a celery tasks and other celery chain tasks to enqueue db transactions to perform process
+<br> Create full evolution chain from pokeapi to DB by id
+<br>This command execute a celery tasks and other celery chain tasks to enqueue db transactions to perform process
+<br>(Get id from original pokeapi `https://pokeapi.co/api/v2/evolution-chain/{id}/)`
 
 ### ENDPOINTS
 * Docs url - `http://localhost:8000/swagger/`

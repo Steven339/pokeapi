@@ -7,7 +7,7 @@ from species.models import Specie
 
 
 class Command(BaseCommand):
-    help = 'Displays current time'
+    help = 'Create full evolution chain from pokeapi to DB by id'
 
     def add_arguments(self, parser):
         parser.add_argument('--id', type=int, help='It is a evolution chain id')
