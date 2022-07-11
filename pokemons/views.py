@@ -12,6 +12,7 @@ from pokemons.serializers.pokemon import PokemonSerializer
 
 class PokemonView(views.APIView):
     def get(self, request, pokemon_id):
+        """Ger pokemon by id"""
         pokemon = Pokemon.objects.filter(pk=pokemon_id).select_related(
             'specie'
         ).prefetch_related(

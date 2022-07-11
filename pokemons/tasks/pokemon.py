@@ -7,6 +7,7 @@ from species.models import Specie
 
 
 def create_pokemon_from_evolution(evolution):
+    """Create pokemon from evolution"""
     evolution_specie = requests.get(evolution['species']['url']).json()
     evolution_specie_obj, _ = Specie.objects.get_or_create(
         name=evolution_specie['name'],
@@ -26,6 +27,7 @@ def create_pokemon_from_evolution(evolution):
 
 @shared_task
 def create_pokemon(pokemon, evolution_specie_obj_id):
+    """Create pokemon"""
     evolution_specie_obj = Specie.objects.filter(pk=evolution_specie_obj_id).first()
     pokemon_obj = None
     if evolution_specie_obj:

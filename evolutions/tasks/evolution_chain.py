@@ -7,10 +7,10 @@ from species.models import Specie
 
 @shared_task
 def create_evolution_chain(evolution_chain, main_specie_obj_id):
+    """Create evolution chain"""
     main_specie_obj = Specie.objects.filter(pk=main_specie_obj_id).first()
     chain_obj = None
     if main_specie_obj:
-        """Create evolution chain"""
         chain_obj = EvolutionChain.objects.create(
             external_id=evolution_chain['id'],
             specie=main_specie_obj,
@@ -21,6 +21,7 @@ def create_evolution_chain(evolution_chain, main_specie_obj_id):
 
 @shared_task
 def create_evolutions_from_chain(chain_obj_id, evolves_to):
+    """Create evolutions and their pokemon to chain obj"""
     chain_obj = EvolutionChain.objects.filter(pk=chain_obj_id).first()
     if chain_obj:
         evolution_list = []
